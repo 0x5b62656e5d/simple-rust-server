@@ -6,7 +6,7 @@ use routes::hello::hello;
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
     HttpServer::new(|| App::new().service(hello))
-        .bind(("localhost", 8300))?
+        .bind(("0.0.0.0", 8300))?
         .run()
         .await
 }
