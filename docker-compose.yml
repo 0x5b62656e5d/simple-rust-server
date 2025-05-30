@@ -1,0 +1,9 @@
+services:
+  simple-rust-server:
+    build: .
+    container_name: simple-rust-server
+    restart: unless-stopped
+    ports:
+      - "8300:8300"
+    volumes:
+      - .:/app
