@@ -1,18 +1,13 @@
 use actix_web::{HttpResponse, Responder, get};
-use serde::Serialize;
-
-#[derive(Serialize)]
-struct HelloResponse {
-    success: bool,
-    message: String,
-}
-
+use crate::util::standard_response::StandardResponse;
 
 #[get("/")]
 async fn hello() -> impl Responder {
-    let response = HelloResponse {
+    let response: StandardResponse<()> = StandardResponse {
         success: true,
         message: "Hello, world!".to_string(),
+        data: None,
+        error: None,
     };
 
     HttpResponse::Ok().json(response)
