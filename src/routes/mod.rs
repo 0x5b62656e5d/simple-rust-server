@@ -7,8 +7,8 @@ pub mod hello;
 
 pub fn init_routes(cfg: &mut web::ServiceConfig) {
     let governor = GovernorConfigBuilder::default()
-        .requests_per_second(10)
-        .burst_size(5)
+        .requests_per_minute(10)
+        .burst_size(1)
         .finish()
         .expect("Failed to create governor config");
 
