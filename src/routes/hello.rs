@@ -1,7 +1,7 @@
 use actix_web::{HttpResponse, Responder, get};
 use crate::util::standard_response::StandardResponse;
 
-#[get("/")]
+#[get("")]
 async fn hello() -> impl Responder {
     let response: StandardResponse<()> = StandardResponse {
         success: true,

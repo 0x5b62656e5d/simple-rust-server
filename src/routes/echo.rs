@@ -8,7 +8,7 @@ struct Body {
     string: JsonValue,
 }
 
-#[post("/echo")]
+#[post("")]
 async fn echo(body: Option<Json<Body>>) -> impl Responder {
     let Some(body) = body else {
         let response: StandardResponse<String> = StandardResponse {
