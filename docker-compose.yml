@@ -4,6 +4,6 @@ services:
     container_name: simple-rust-server
     restart: unless-stopped
     ports:
-      - "8300:8300"
+      - "3100:3100"
     volumes:
       - .:/app

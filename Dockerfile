@@ -5,5 +5,5 @@ RUN cargo build --release
 
 FROM debian:bookworm-slim
 COPY --from=builder /app/target/release/simple-rust-server /usr/local/bin/server
-EXPOSE 8300
+EXPOSE 3100
 CMD ["/usr/local/bin/server"]
